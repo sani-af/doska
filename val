@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 From ur Ngo'nyi pleaser With Love 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #ff4d6d, #ffc371);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Floating shapes */
+.shape {
+  position: fixed;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  animation: floatShape 12s linear infinite;
+  z-index: 0;
+}
+@keyframes floatShape {
+  0% { transform: translateY(100vh) scale(1); opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+.container { padding: 30px 20px; position: relative; z-index: 1; }
+
+button {
+  background: rgba(255,255,255,0.9);
+  color: #ff4d6d;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.3s;
+}
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #fff;
+}
+
+input {
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.gallery img, video {
+  width: 90%;
+  max-width: 300px;
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.gallery img:hover, video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(255,255,255,0.7);
+}
+
+#blurVideo { filter: blur(12px); transition: 0.5s; }
+
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 22px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Fade-in sections */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+.fade-in { opacity: 1; transform: translateY(0); }
+
+/* Hidden sections */
+.hidden { display: none; }
+
+/* Responsive for mobile */
+@media screen and (max-width: 600px) {
+  .gallery img, video { max-width: 95%; }
+  button { padding: 12px 20px; font-size: 0.9rem; }
+  input { font-size: 0.9rem; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.2rem; }
+  p { font-size: 1rem; line-height: 1.5rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating shapes -->
+<div class="shape" style="left:10vw; width:60px; height:60px;"></div>
+<div class="shape" style="left:50vw; width:100px; height:100px;"></div>
+<div class="shape" style="left:80vw; width:70px; height:70px;"></div>
+
+<div class="container">
+
+  <!-- PASSWORD SCREEN -->
+  <div id="lock">
+    <h1>🔒 ❤️A Love Note❤️</h1>
+    <p>Enter the magic word 💌</p>
+    <input id="password" placeholder="hint: my heart ❤️">
+    <br><br>
+    <button onclick="unlock()">will u spread ur legs 💖</button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main" class="hidden">
+    <h1 class="fade-section">💖 Happy Valentine’s <span id="name"></span> 💖</h1>
+
+    <!-- VIDEO -->
+    <div id="videoContainer" class="hidden">
+      <video id="blurVideo" muted playsinline>
+        <source src="https://www.dropbox.com/scl/fi/t7q8ssdlpdaxrh7ee8mi2/VID_20250803_032246.mp4?rlkey=cp7rbzs4dwpo7upzlmgel5xqc&raw=1" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+      <br>
+      <button id="watchBtn">Watch this ❤️</button>
+    </div>
+
+    <div id="surprise" class="hidden">
+      <p class="fade-section">
+        I crave your smile, your touch, your presence.  
+        You drive me crazy in the best way possible 😈  
+        And your sweetness melts my heart ❤️
+
+	Meddy, an bende ahinya kendo wach marach👙.
+	I love you more than words can show, and my heart belongs to you today and always. ❤️
+      </p>
+
+      <h2 id="countdown" class="fade-section"></h2>
+
+      <!-- PHOTO SLIDES -->
+      <div class="gallery fade-section">
+        <img src="https://drive.google.com/uc?export=download&id=1rEUkLcqVBYLwO__EXAnCgKUIvUfysA4R">
+        <img src="https://drive.google.com/uc?export=download&id=1tnFBQGxBDnl9t5QXE4rGYRE8JOslvjhg">
+        <img src="https://drive.google.com/uc?export=download&id=11hp9aDNyY1pSc7AljPhkYXDui4">
+        <img src="https://drive.google.com/uc?export=download&id=1V4-PuAP3r7VAoA-VA3Tc5STpCNWEWweI">
+      </div>
+
+      <h2 class="fade-section">Will you be my Valentine? 💘</h2>
+      <button onclick="yes()">YES 😍</button>
+      <button id="no" onmouseover="run()">NO 🙈</button>
+      <p id="answer"></p>
+    </div>
+  </div>
+</div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="https://www.dropbox.com/scl/fi/8s46fmqjn3gahcm9ue2jd/Shayne-Ward-Breathless-Video.mp3?rlkey=mvdzdz1atg3496090ego83old&raw=1" type="audio/mpeg">
+</audio>
+
+<script>
+const correctPassword = "love";
+
+// Unlock page
+function unlock() {
+  if (document.getElementById("password").value.toLowerCase() === correctPassword) {
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("main").classList.remove("hidden");
+
+    const music = document.getElementById("music");
+    music.volume = 0.7;
+    music.play();
+
+    const name = prompt("What's your name? 💖");
+    document.getElementById("name").innerText = name ? name : "";
+
+    document.getElementById("videoContainer").classList.remove("hidden");
+    document.getElementById("surprise").classList.remove("hidden");
+    startCountdown();
+    startHearts();
+    fadeInSections();
+  } else alert("Wrong password 😏");
+}
+
+// WATCH BUTTON
+document.getElementById("watchBtn").addEventListener("click", () => {
+  const video = document.getElementById("blurVideo");
+  video.play();
+  video.muted = false;
+  video.style.filter = "blur(0px)";
+  document.getElementById("watchBtn").style.display = "none";
+
+  const music = document.getElementById("music");
+  music.pause();
+
+  video.onended = () => music.play();
+});
+
+// COUNTDOWN
+function startCountdown() {
+  const valentineDate = new Date("February 14, 2026 00:00:00").getTime();
+  setInterval(() => {
+    const now = new Date().getTime();
+    const diff = valentineDate - now;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    document.getElementById("countdown").innerHTML =
+      `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s until Valentine 💖`;
+  }, 1000);
+}
+
+// FLOATING HEARTS
+function startHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }, 300);
+}
+
+// YES/NO BUTTONS
+function yes() {
+  document.getElementById("answer").innerHTML = "💍 YAAAY!!! You just made me the happiest person alive ❤️🔥";
+}
+function run() {
+  const btn = document.getElementById("no");
+  btn.style.position = "absolute";
+  btn.style.left = Math.random() * 80 + "vw";
+  btn.style.top = Math.random() * 80 + "vh";
+}
+
+// FADE IN TEXT
+function fadeInSections() {
+  const sections = document.querySelectorAll('.fade-section');
+  sections.forEach((el, i) => {
+    setTimeout(() => el.classList.add('fade-in'), i * 500);
+  });
+}
+</script>
+</body>
+</html>
